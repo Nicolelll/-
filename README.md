@@ -22,5 +22,6 @@
     去重（⚠️ NaN在set内部是相等的 {}在set内部是不相等的）
 	set.add() 相当于 arr.push() (返回 Set 结构本身。)
 	set.size 相当于 arr.length
+    [详情请点击](http://es6.ruanyifeng.com/#docs/set-map) 
     ￼￼￼￼
 ￼￼
