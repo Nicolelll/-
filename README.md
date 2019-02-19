@@ -6,6 +6,23 @@
     let intersection = a.filter(v => b.includes(v))
     let difference = a.concat(b).filter(v => !a.includes(v) || !b.includes(v))
     
+主要用法2: （ES6 set）
+
+	let a = new Set([1, 2, 3]);
+	let b = new Set([4, 3, 2]);
+
+	// 并集
+	let union = new Set([...a, ...b]);
+	// Set {1, 2, 3, 4}
+
+	// 交集
+	let intersect = new Set([...a].filter(x => b.has(x)));
+	// set {2, 3}
+
+	// 差集
+	let difference = new Set([...a].filter(x => !b.has(x)));
+	// Set {1}
+    
 ### setting sync id    
     Key “4dbfecc12ff36361679cf1f44283fb8cc038ce96”
     Token: 90e4f9ae9e81bc2d93a6e18ca0ec1a2389121f49
