@@ -35,11 +35,19 @@
     react组件 => 一个object
 	生成react组件 是由一个createElement(type, props, children) 函数创建的
 
-### es6 set用法
+### es6     <a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank">详情请点击</a>
+## set用法
+    定义：一个不重复的集合
+	
     去重（⚠️ NaN在set内部是相等的 {}在set内部是不相等的）
-	set.add() 相当于 arr.push() (返回 Set 结构本身。)
+	set.add(v) 相当于 arr.push() (返回 Set 结构本身。)
+	set.delete(v) 删
+	set.has(v) 集合中某元素是否存在
+	set.clear() 清除
 	set.size 相当于 arr.length
-   <a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank">详情请点击</a>
+
+## weakSet
+	 定义: 一个不重复集合 但是是浅引用 
 ￼￼￼￼
 ### ['1', '2', '3'].map(parseInt) 问题思考
 	['1', '2', '3'].map(parseInt) 相当于 ['1', '2', '3'].map((item, index) => return parseInt(item, index))
