@@ -40,5 +40,11 @@
 	set.add() 相当于 arr.push() (返回 Set 结构本身。)
 	set.size 相当于 arr.length
    <a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank">详情请点击</a>
-    ￼￼￼￼
+￼￼￼￼
+### ['1', '2', '3'].map(parseInt) 问题思考
+	['1', '2', '3'].map(parseInt) 相当于 ['1', '2', '3'].map((item, index) => return parseInt(item, index))
+	arr.map()有三个参数 参数一: item 参数二: 索引 参数三: arr本身
+	parseInt()有两个参数 参数一: 要转换的数字或者字符串 参数二: 基数
+ <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map用法</a>
+  <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">parseInt用法</a>
 ￼￼
