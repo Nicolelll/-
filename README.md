@@ -29,17 +29,18 @@
     ID “d1c846a11b9b435bc34808ebb4473327”
     
 ### 为什么需要virtual DOM ？
-    VD使得开发者可以通过声明的方式表达页面的呈现效果，而不用关心DOM操作的相关细节。DOM元素的增删改完全可以交给框架来高效的完成。更新页面的时候，借助VD，DOM 元素的改变可以在内存中进行比较，再结合框架的事务机制将多次比较的结果合并后一次性更新到页面，从而有效地减少页面渲染的次数，提高渲染效率。
+
+   VD使得开发者可以通过声明的方式表达页面的呈现效果，而不用关心DOM操作的相关细节。DOM元素的增删改完全可以交给框架来高效的完成。更新页面的时候，借助VD，DOM 元素的改变可以在内存中进行比较，再结合框架的事务机制将多次比较的结果合并后一次性更新到页面，从而有效地减少页面渲染的次数，提高渲染效率。
     
 ### React 源码理解
-    react组件 => 一个object
-	生成react组件 是由一个createElement(type, props, children) 函数创建的
+   react组件 => 一个object
+生成react组件 是由一个createElement(type, props, children) 函数创建的
 
 ### es6     <a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank">详情请点击</a>
 ## set用法
-    定义：一个不重复的集合
+   定义：一个不重复的集合
 	
-    去重（⚠️ NaN在set内部是相等的 {}在set内部是不相等的）
+   去重（⚠️ NaN在set内部是相等的 {}在set内部是不相等的）
 	set.add(v) 相当于 arr.push() (返回 Set 结构本身。)
 	set.delete(v) 删
 	set.has(v) 集合中某元素是否存在
@@ -47,7 +48,7 @@
 	set.size 相当于 arr.length
 
 ## weakSet
-	 定义: 一个不重复集合 但是是浅引用 
+	定义: 一个不重复集合 但是是浅引用 
 ￼￼￼￼
 ### ['1', '2', '3'].map(parseInt) 问题思考
 	['1', '2', '3'].map(parseInt) 相当于 ['1', '2', '3'].map((item, index) => return parseInt(item, index))
