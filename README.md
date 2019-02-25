@@ -55,4 +55,25 @@
 	parseInt()有两个参数 参数一: 要转换的数字或者字符串 参数二: 基数
  <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map用法</a>
   <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">parseInt用法</a>
-￼￼
+
+### 防抖和节流
+	
+  防抖是指一段时间内 事件只能被触发一次 当事件一直在被反复执行时是不触发的 只有在事件执行完毕之后才会被触发
+  ```
+  let timeout = false
+  timeout = setTimeout(() => {
+    timeout = null
+    func()
+  }, time)
+  ```
+  节流是指在规定的时间内 事件只执行一次
+  ```
+  let canrun = true
+  if (!canrun) return 
+  
+  canrun = false
+  setTimeout(() => {
+    func()
+    canrun = true
+  }, wait)
+  ```
