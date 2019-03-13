@@ -83,3 +83,56 @@
     canrun = true
   }, wait)
   ```
+### 事件循环机制
+宏任务（macro task）和微任务（micro task）的区别
+
+宏任务是指 在执行完任务之后 再执行下一个任务 通常是执行完任务之后 页面进行渲染 然后再执行下一个任务 所以执行流程如下：
+	macro task => render => macro task => render => …
+宏任务有哪些呢
+	如 setTimeout, setInterval, I/o, postMessage, setImmediate等
+
+微任务是指 执行当前任务之后立即执行下一个任务，也就是说，在当前task任务后，下一个task之前，在渲染之前。
+因为无需渲染 所以执行速度比宏任务要快
+
+microtask主要包含：Promise.then、async  await 、MutaionObserver、process.nextTick(Node.js 环境)
+
+## node和浏览器事件循环差别
+在node11版本之前 先执行所有的宏任务 再执行微任务，
+在node11之后 跟浏览器执行机制一致
+
+例：
+```
+function test () {
+   console.log('start')
+    setTimeout(() => {
+        console.log('children2')
+        Promise.resolve().then(() => {console.log('children2-1')})
+    }, 0)
+    setTimeout(() => {
+        console.log('children3')
+        Promise.resolve().then(() => {console.log('children3-1')})
+    }, 0)
+    Promise.resolve().then(() => {console.log('children1')})
+    console.log('end') 
+}
+
+test()
+
+// 以上代码在node11以下版本的执行结果(先执行所有的宏任务，再执行微任务)
+// start
+// end
+// children1
+// children2
+// children3
+// children2-1
+// children3-1
+
+// 以上代码在node11及浏览器的执行结果(顺序执行宏任务和微任务)
+// start
+// end
+// children1
+// children2
+// children2-1
+// children3
+// children3-1
+```
