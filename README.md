@@ -23,11 +23,6 @@
 	let difference = new Set([...a].filter(x => !b.has(x)));
 	// Set {1}
     
-### setting sync id    
-    Key “4dbfecc12ff36361679cf1f44283fb8cc038ce96”
-    Token: 90e4f9ae9e81bc2d93a6e18ca0ec1a2389121f49
-    ID “d1c846a11b9b435bc34808ebb4473327”
-    
 ### 为什么需要virtual DOM ？
 
    VD使得开发者可以通过声明的方式表达页面的呈现效果，而不用关心DOM操作的相关细节。DOM元素的增删改完全可以交给框架来高效的完成。更新页面的时候，借助VD，DOM 元素的改变可以在内存中进行比较，再结合框架的事务机制将多次比较的结果合并后一次性更新到页面，从而有效地减少页面渲染的次数，提高渲染效率。
